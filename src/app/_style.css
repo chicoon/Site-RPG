@@ -1,0 +1,197 @@
+*
+{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body
+{
+	background-color: #7d4521;
+	overflow: hidden;
+}
+
+/* Div que encapsula o scroll */
+
+#scroll
+{
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.screen{
+	display: none;
+	flex-direction: column;
+	height: 96%;
+	width: 90%;
+	align-items: center;
+	justify-content: center;
+	font-size: 80px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Configuracao das partes do scroll */
+
+.bkg-config{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+#scroll-top{
+	height:140px;
+	width: 675px;
+	background-image: url('../assets/images/scroll-top.png');
+}
+
+#scroll-middle{
+	height: 0;
+	width: 580px;
+	background-image: url('../assets/images/scroll-middle.png');
+	background-size: cover;
+	overflow: hidden;
+}
+
+#scroll-bot{
+	height:140px;
+	width: 675px;
+	background-image: url('../assets/images/scroll-bottom.png');
+}
+
+#content-holder{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+#content-holder{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#button-group{
+	position: absolute;
+	bottom: 0px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+/* Definicao das animacoes do scroll */
+
+.scroll-enter{
+	animation: enter-right 1s ease-in-out;
+}
+.scroll-exit{
+	animation: exit-right 1s ease-in-out;
+}
+
+.open-middle{
+	animation: open-middle 1s ease-in-out;
+}
+
+.close-middle{
+	animation: close-middle 1s ease-in-out;
+}
+
+.enter-bottom{
+	animation: enter-bottom 1s ease-in-out;
+}
+
+.exit-bottom{
+	animation: exit-bottom 1s ease-in-out;
+}
+
+@keyframes exit-bottom{
+	0%{top:0px}
+	100%{top:100vh}
+}
+
+@keyframes enter-bottom{
+	0%{top:100vh}
+	100%{top:0px}
+}
+
+@keyframes enter-right{
+	0%{right: -100vw;}
+	80%{right: -0vw;}
+	100%{right:0px;}
+}
+
+@keyframes exit-right{
+	0%{right: -0vw;}
+	100%{right: -100vw;}
+}
+
+@keyframes close-middle{
+	0%{
+		height: calc(100vh - 280px);
+	}
+	100%{
+		height: 0px;
+	}
+}
+
+@keyframes open-middle{
+	0%{
+		height: 0px;
+	}
+	100%{
+		height: calc(100vh - 280px);
+	}
+}
+
+
+
+/* Definicao de estilo dos bottoes */
+.button{
+	height: 26px;
+	width: 58px;
+	background-repeat: no-repeat;
+}
+
+#continuar
+{
+	display: none;
+	background-image: url('../assets/images/continuar.png');
+}
+	#continuar:active
+	{
+		background-image: url('../assets/images/continuar-click.png');
+	}
+
+#novo
+{
+	background-image: url('../assets/images/novo.png');
+}
+	#novo:active
+	{
+		background-image: url('../assets/images/novo-click.png');
+	}
+
+#voltar
+{
+	display: none;
+	background-image: url('../assets/images/voltar.png');
+}
+	#voltar:active
+	{
+		background-image: url('../assets/images/voltar-click.png');
+	}
+
+
+
